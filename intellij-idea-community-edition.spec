@@ -30,7 +30,7 @@ Source0:	https://github.com/JetBrains/intellij-community/archive/%{commit0}.zip#
 Source1:	https://github.com/JetBrains/android/archive/%{commit1}.zip#/JetBrains-android-%{shortcommit1}.tar.gz
 Source2:	adt-tools-base-17e9c8b.tar.gz	
 Source3:	idea.desktop
-Source4:	intellij-idea-community-edition/idea.sh
+Source4:	idea.sh
 
 BuildRequires:	ant
 BuildRequires:	java-1.8.0-openjdk-devel
