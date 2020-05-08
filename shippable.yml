@@ -1,0 +1,27 @@
+# Build Environment
+
+language: python
+
+python:
+  - 3.0
+
+install: true
+
+# commands in this section run inside your CI container. In addition, any commands such as ls, in this section can be used to skip default processing #for CI.
+#  ci:
+    # Here you'd place anything you want to test. 
+#    - rm -f /urpms
+#    - wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms && chmod a+x urpms
+#    - /urpms -g UnitedRPMs/unitedrpms -s unitedrpms.spec -t fedora-25-x86_64
+
+# the build scripts
+script:
+- docker run --privileged=true --cap-add=SYS_ADMIN -v $(pwd)/30:/root/enjoy/ --security-opt seccomp:unconfined davidva/unibuild-30 /bin/sh -c "rm -f /urpms && wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms && chmod a+x urpms && /urpms -g UnitedRPMs/intellij-idea-community-edition -s intellij-idea-community-edition.spec -r true -d 'dist .fc30' -u true"   
+
+notifications:
+slack: unitedrpms:lzDykHTpajKrgmGz9NkrO1Hj
+
+
+
+
+
