@@ -15,6 +15,7 @@
 
 # adt-tools-base
 # See commits here http://git.jetbrains.org/?p=idea/adt-tools-base.git;a=summary
+# You can make the tarball "./intellij-idea-community-snapshot -c your_commit_here
 %global commit2 17e9c8b666cac0b974b1efc5e1e4c33404f72904 
 %global shortcommit2 %(c=%{commit2}; echo ${c:0:7})
 
@@ -44,7 +45,6 @@ Requires:	openjfx
 Requires:	java-1.8.0-openjdk-openjfx	
 
 %description
-PeaZip is a free cross-platform file archiver that provides a unified
 IntelliJ IDEA analyzes your code, looking for connections between symbols
 across all project files and languages.  Using this information it provides
 indepth coding assistance, quick navigation, clever error analysis, and, of
